@@ -1,0 +1,11 @@
+<table>
+<tr>
+  <td *ngFor='let _weekday of _weekdays'>{{_weekday.substr(0,2)}}</td>
+</tr>
+<tr  *ngFor='let h of _weeksArray;let i=index'>
+ <td *ngFor="let _week of _monthDays;let j=index" [ngClass]="{'active': _dayOfMonth ==_week[i] }"
+ (click)="setCurrentDate(_week[i])">
+    {{_week[i]}}
+</td> 
+</tr>
+</table>
