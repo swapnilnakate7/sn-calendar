@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as moment from 'moment';
+import { LoggerService } from '../core/services/logger.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -11,35 +12,39 @@ export class CalendarComponent implements OnInit {
   _weekdays: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   _daysInMonth: number;
   _currentDayinWeek: number;
-  @Input() _today?: any;
+  _today?: any;
   _monthDays: any;
-  _weeksArray: any[];
+  _bigWeekArray: any[];
   _dayOfMonth: number;
-  constructor() { }
+  @Input() selectedDate?: any;
+  constructor(private log: LoggerService) { }
 
   ngOnInit() {
-    if (!this._today) {
-      this._today = moment();
+    if (!this.selectedDate) {
+      this.selectedDate = moment();
     }
-    this._daysInMonth = this._today.daysInMonth();
-    this._dayOfMonth = this._today.date();
-    this.setCurrentMonth();
 
-   // console.log({ a: this._today, b: this._daysInMonth, c: this._currentDayinWeek, d: this._dayOfMonth });
+    this._today = moment();
+    this._daysInMonth = this.selectedDate.daysInMonth();
+    this._dayOfMonth = this.selectedDate.date();
+    this.setCurrentMonth();
   }
 
 
   setCurrentMonth() {
     const daysOfMonth = [[], [], [], [], [], [], []];
     let date;
-    const startofMonth = this._today.startOf('month').day() - 1;
-
     let firstDateSet = false;
+    const _weekdatAtstartOfMonth = this.selectedDate.startOf('month').day() - 1;
+
+    this._daysInMonth = this.selectedDate.daysInMonth();
+    this._dayOfMonth = this.selectedDate.date();
+
     for (let i = 0, j = 0; i < 7; i++) {
       if (date === this._daysInMonth + 1) {
         break;
       }
-      if (i === (startofMonth) && !firstDateSet) {
+      if (i === _weekdatAtstartOfMonth && !firstDateSet) {
         date = 1;
         firstDateSet = true;
       }
@@ -54,9 +59,7 @@ export class CalendarComponent implements OnInit {
     }
 
     this._monthDays = daysOfMonth;
-    this._weeksArray = this.getNumberOfWeeks(this._monthDays);
-
-   // console.log('clender', daysOfMonth);
+    this._bigWeekArray = this.getNumberOfWeeks(this._monthDays);
   }
 
   getNumberOfWeeks(month: [[]]) {
@@ -74,7 +77,15 @@ export class CalendarComponent implements OnInit {
   }
 
   setCurrentDate(date: number) {
-    this._today = moment(date + '/' + this._today.month() + 1 + '/' + this._today.year(), 'DD/MM/YYYY');
-    this._dayOfMonth = this._today.date();
+    this.selectedDate.set('date', date);
+    this._dayOfMonth = this.selectedDate.date();
+  }
+
+  updateMonth(updateTo: string) {
+    const updateToOperation = { 'next': 1, 'previous': -1 };
+    const month = updateTo ? updateToOperation[updateTo] : 'next';
+    this.selectedDate.set('month', this.selectedDate.month() + month);
+    this.setCurrentMonth();
+    this.log.info('CalendarComponent.updateMonth(): ' + this.selectedDate);
   }
 }

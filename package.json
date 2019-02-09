@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "author": {"name":"nakate.swapnil7@gmail.com "},
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.0.0",

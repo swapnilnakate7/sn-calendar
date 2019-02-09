@@ -2,16 +2,21 @@ tr{
     border:1px solid;
 }
 td{
-   // border:1px solid;
     color: #3F51B5;
     background: #ffffff;
     text-align: center;
+    &:hover {
+        background-color: #3F51B5;
+        color: #ffffff;
+    }
 }
 table{
     border:1px solid;
-}
+    width:25%;
+    font-family: OpenSans;
+}  
 .active {
- //   background-color: #9d96e0;
- background-color: #00df8b; border-radius: 50%;
+ background-color: #00df8b; 
+ border-radius: 50%;
    
 }
