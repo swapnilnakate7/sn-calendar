@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as moment from 'moment';
 import { LoggerService } from '../core/services/logger.service';
+import { convertMetaToOutput } from '@angular/compiler/src/render3/util';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -23,25 +24,23 @@ export class CalendarComponent implements OnInit {
     if (!this.selectedDate) {
       this.selectedDate = moment();
     }
-
     this._today = moment();
     this._daysInMonth = this.selectedDate.daysInMonth();
     this._dayOfMonth = this.selectedDate.date();
-    this.setCurrentMonth();
+    this.setCurrentMonth(this.selectedDate);
+
   }
 
 
-  setCurrentMonth() {
+  setCurrentMonth(selectedDate) {
     const daysOfMonth = [[], [], [], [], [], [], []];
-    let date;
+    let date = 0;
     let firstDateSet = false;
-    const _weekdatAtstartOfMonth = this.selectedDate.startOf('month').day() - 1;
-
-    this._daysInMonth = this.selectedDate.daysInMonth();
-    this._dayOfMonth = this.selectedDate.date();
+    const _weekdatAtstartOfMonth = (selectedDate.startOf('month').day() === 0) ? 0 :
+      selectedDate.startOf('month').day() - 1;
 
     for (let i = 0, j = 0; i < 7; i++) {
-      if (date === this._daysInMonth + 1) {
+      if (date === selectedDate.daysInMonth() + 1) {
         break;
       }
       if (i === _weekdatAtstartOfMonth && !firstDateSet) {
@@ -84,8 +83,18 @@ export class CalendarComponent implements OnInit {
   updateMonth(updateTo: string) {
     const updateToOperation = { 'next': 1, 'previous': -1 };
     const month = updateTo ? updateToOperation[updateTo] : 'next';
+
     this.selectedDate.set('month', this.selectedDate.month() + month);
-    this.setCurrentMonth();
+    this.setCurrentMonth(this.selectedDate);
+
     this.log.info('CalendarComponent.updateMonth(): ' + this.selectedDate);
+  }
+
+  disableDatesBefore(date: number, selectedDate: any) {
+    if (this._today.date() > date || selectedDate.month() < this._today.month()
+      || selectedDate.year() < this._today.year()) {
+      return true;
+    }
+    return false;
   }
 }
