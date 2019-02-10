@@ -5,7 +5,7 @@ This project uses momentjs for calendar functionality. You can import the SnCale
 ## Using into your Angular Application
 
 - run `npm i sn-calendar` into your project root directory.
-- import SnCalendarModule into your application.
+- import `SnCalendarModule` into your application.
 - use `<sn-calendar>` element.
 - supports `locale`, `date(Moment Object)` as input. 
 - use `selectedDateOut` event to get the selected date.
