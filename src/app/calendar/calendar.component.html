@@ -1,17 +1,24 @@
-<button (click)="updateMonth('previous')"><<</button>
-    <!-- <p>
-      {{selectedDate|date :'dd MMM yyyy '}}
-    </p> -->
-<button (click)="updateMonth('next')">>></button>
-<table>
-<tr>
-  <td *ngFor='let _weekday of _weekdays'>{{_weekday.substr(0,2)}}</td>
-</tr>
-<tr  *ngFor='let h of _bigWeekArray;let i=index'>
- <td *ngFor="let _week of _monthDays;let j=index" [ngClass]="{'active': _dayOfMonth ==_week[i],
-'disable': disableDatesBefore(_week[i],selectedDate) }"
- (click)="disableDatesBefore(_week[i],selectedDate) || setCurrentDate(_week[i])">
-    {{_week[i]}}
-</td> 
-</tr>
-</table>
+
+
+<div class="calendarContainer">
+  <div class="calendarHead">
+    <button (click)="updateMonth('previous')">{{getMonth(selectedDate.month()-1)}}</button>
+    <p>
+     <!-- {{selectedDate.toString()}} -->
+     {{getLocaleNumber(selectedDate.date())}} {{getMonth(selectedDate.month())}} {{ getLocaleNumber(selectedDate.year())  }}
+   </p>
+  <button (click)="updateMonth('next')">{{getMonth(selectedDate.month()+1)}}</button>
+  </div>
+  <table>
+  <tr>
+    <td class="weekdays" *ngFor='let _weekday of _weekdays'>{{_weekday.substr(0,2)}}</td>
+  </tr>
+  <tr  *ngFor='let h of _bigWeekArray;let i=index'>
+   <td *ngFor="let _week of _monthDays;let j=index" [ngClass]="{'active': _dayOfMonth ==_week[i],
+  'disable': disableDatesBefore(_week[i],selectedDate) }"
+   (click)="disableDatesBefore(_week[i],selectedDate) || setCurrentDate(_week[i])">
+      {{_week[i] == 0?'':_week[i]}}
+  </td> 
+  </tr>
+  </table>
+</div>

@@ -1,3 +1,23 @@
+.calendarContainer {
+width: 80%;
+position: relative;
+border: 1px solid;
+margin:5px;
+
+.calendarHead{
+  width: 100%;
+  text-align: center;
+
+  button {
+    width: 20%;
+  }
+
+  p{
+    display:inline-block;
+    width:50%;
+  }
+}
+  
 tr {
   border: 1px solid;
 }
@@ -14,12 +34,16 @@ td {
       color: #ffffff;
     }
   }
+
+  &.weekdays {
+    color:#e91e63
+  }
 }
 
 table {
-  border: 1px solid;
-  width: 25%;
+  //border: 1px solid;
   font-family: 'OpenSans';
+  width: 100%;
 }
 
 .active:not(.disable) {
@@ -31,4 +55,6 @@ table {
 .disable {
   color: grey;
   cursor: not-allowed;
+}
+
 }
