@@ -1,6 +1,7 @@
 {
   "name": "sn-calendar",
   "version": "0.0.0",
+  "description":"SnCalendar is an Angular Calendar Module uses momentjs",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,8 +10,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "author": {"name":"nakate.swapnil7@gmail.com "},
-  "private": true,
+  "author": {"name":"Swapnil Nakate","email": "nakate.swapnil7@gmail.com","url": "https://swapnilnakate.in"},
+  "keywords":["sn-calendar","angular-calendar","momentjs-calendar","calendar"],
+  "bugs": {"url": "https://github.com/swapnilnakate7/sn-calendar/issues","email": "nakate.swapnil7@gmail.com"},
+  "repository": {"url": "https://github.com/swapnilnakate7/sn-calendar","type": "git"},
   "dependencies": {
     "@angular/animations": "~7.0.0",
     "@angular/common": "~7.0.0",
@@ -46,5 +49,6 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.6"
-  }
+  },
+  "license": "MIT"
 }
