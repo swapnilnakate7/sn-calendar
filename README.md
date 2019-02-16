@@ -1,6 +1,6 @@
 # SnCalendar
 
-This project uses [Moment.js] for calendar functionality. You can import the `SnCalendarModule` and use `SnCalendarComponent` straight away. Please feel free to report any bugs and I'll be happy to introduce any feature requests.
+This project uses [Moment.js] for calendar functionality. You can import the `SnCalendarModule` and use `SnCalendarComponent` straight away. Please feel free to report any bugs and I'll be happy to introduce any feature requests. [Click here for Demo] 
 
 ## Using into your Angular Application
 
@@ -15,3 +15,4 @@ This project uses [Moment.js] for calendar functionality. You can import the `Sn
 get in touch with me email: nakate.swapnil7@gmail.com | twitter: @SwapnilNakate7
 
 [Moment.js]:https://momentjs.com/
+[Click here for Demo]:https://swapnilnakate7.github.io/sn-calendar/
