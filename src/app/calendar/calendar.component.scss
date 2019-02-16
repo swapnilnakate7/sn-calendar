@@ -75,6 +75,11 @@ table {
       color:#e91e63;
       position: relative; 
     }
+
+    &.disable {
+      color: grey;
+      cursor: not-allowed;
+     }
   
     &:not(.disable):not(.weekdaysText):not(.active) {
       &:hover {
@@ -93,8 +98,5 @@ table {
   }
 }
 
-.disable {
-  color: grey;
-  cursor: not-allowed;
- }
+
 }
