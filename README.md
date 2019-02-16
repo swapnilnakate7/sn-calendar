@@ -1,6 +1,6 @@
 # SnCalendar
 
-This project uses momentjs for calendar functionality. You can import the SnCalendar Module and use SnCalendarComponent straight away. Please feel free to report any bugs and I'll be happy to introduce any feature requests.
+This project uses [Moment.js] for calendar functionality. You can import the `SnCalendarModule` and use `SnCalendarComponent` straight away. Please feel free to report any bugs and I'll be happy to introduce any feature requests.
 
 ## Using into your Angular Application
 
@@ -9,6 +9,9 @@ This project uses momentjs for calendar functionality. You can import the SnCale
 - use `<sn-calendar>` element.
 - supports `locale`, `date(Moment Object)` as input. 
 - use `selectedDateOut` event to get the selected date.
+- supports  `restrictPast` to disable past dates, if not provided calendar will show previous  dates as well.
 
 ## Help
 get in touch with me email: nakate.swapnil7@gmail.com | twitter: @SwapnilNakate7
+
+[Moment.js]:https://momentjs.com/

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import * as moment from 'moment';
-import {Moment} from 'moment';
+import { Moment } from 'moment';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,12 @@ import {Moment} from 'moment';
 })
 export class AppComponent {
 
-  title = 'sn-calendar v0.0.0';
+  title = 'sn-calendar v0.0.2';
   date = moment('22/05/2019', 'DD/MM/YYYY');
-  locale ='fr';
+  locale = 'fr';
+  restrictPast = true;
 
-  getUpdatedDate(e:Moment) {
+  getUpdatedDate(e: Moment) {
     this.date = e;
   }
 }

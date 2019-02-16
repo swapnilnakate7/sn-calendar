@@ -18,10 +18,12 @@ export class CalendarComponent implements OnInit {
   _dayOfMonth: number;
   _locale: string;
   _months: string[];
+  _restrictPast: boolean;
 
   @Input() startDayofWeek?: string;
   @Input() locale?: string;
   @Input() selectedDate?: Moment;
+  @Input() restrictPast?: boolean;
   @Output() selectedDateOut?: EventEmitter<Moment> = new EventEmitter<Moment>();
 
   constructor(private log: LoggerService) { }
@@ -34,6 +36,10 @@ export class CalendarComponent implements OnInit {
     if (!this.selectedDate) {
       this.selectedDate = moment();
       this.log.warn('CalendarComponent.ngOnInit(): You did not provide the custom date');
+    }
+
+    if (typeof this.restrictPast !== 'undefined') {
+      this._restrictPast = this.restrictPast;
     }
 
     this.selectedDate = moment(this.selectedDate.toISOString());
@@ -160,6 +166,10 @@ export class CalendarComponent implements OnInit {
     const currentYear = this._today.year();
     const currentDate = this._today.date();
 
+    if (!this._restrictPast) {
+      return false;
+    }
+
     if (selectedYear === currentYear) {
       if (selectedMonth < currentMonth) {
         return true;
@@ -197,7 +207,7 @@ export class CalendarComponent implements OnInit {
     }
     return this._months[index];
   }
-  
+
   /**
    * returns converted  number according to locale
    * @param number {number}
