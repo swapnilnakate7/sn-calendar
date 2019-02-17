@@ -5,10 +5,10 @@ import { Moment } from 'moment';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'sn-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss']
+  templateUrl: './sn-calendar.component.html',
+  styleUrls: ['./sn-calendar.component.scss']
 })
-export class CalendarComponent implements OnInit {
+export class SnCalendarComponent implements OnInit {
   _weekdays: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   _daysInMonth: number;
   _currentDayinWeek: number;

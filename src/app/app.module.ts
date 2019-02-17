@@ -3,18 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CalendarComponent } from './calendar/calendar.component';
+
+import {CalendarModule, SnCalendarComponent} from '../../projects/calendar/src/public_api';
+import { Router } from '@angular/router';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CalendarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CalendarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[]
 })
 export class SnCalendarModule { }
