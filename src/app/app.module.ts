@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SnCalendarComponent} from '../app/calendar/sn-calendar.component';
-import { Router } from '@angular/router';
+
 
 
 @NgModule({
