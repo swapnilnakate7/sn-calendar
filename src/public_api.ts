@@ -1,2 +1,2 @@
 export * from './app/app.module';
-export * from '../projects/calendar/src/public_api';
+export * from './app/calendar/sn-calendar.component';
