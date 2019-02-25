@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "sn-calendar-lib": {
+      "root": "projects/sn-calendar-lib",
+      "sourceRoot": "projects/sn-calendar-lib/src",
+      "projectType": "library",
+      "prefix": "sn",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/sn-calendar-lib/tsconfig.lib.json",
+            "project": "projects/sn-calendar-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sn-calendar-lib/src/test.ts",
+            "tsConfig": "projects/sn-calendar-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/sn-calendar-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sn-calendar-lib/tsconfig.lib.json",
+              "projects/sn-calendar-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "sn-calendar"
