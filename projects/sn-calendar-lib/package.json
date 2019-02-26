@@ -1,8 +1,31 @@
 {
-  "name": "sn-calendar-lib",
-  "version": "0.0.1",
+  "name": "sn-calendar",
+  "version": "0.0.2",
+  "description": "SnCalendar is an Angular Calendar Module uses momentjs",
   "peerDependencies": {
     "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0"
-  }
+    "@angular/core": "^7.0.0",
+    "moment": "^2.24.0"
+  },
+  
+  "author": {
+    "name": "Swapnil Nakate",
+    "email": "nakate.swapnil7@gmail.com",
+    "url": "https://swapnilnakate.in"
+  },
+  "keywords": [
+    "sn-calendar",
+    "angular-calendar",
+    "momentjs-calendar",
+    "calendar"
+  ],
+  "bugs": {
+    "url": "https://github.com/swapnilnakate7/sn-calendar/issues",
+    "email": "nakate.swapnil7@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/swapnilnakate7/sn-calendar",
+    "type": "git"
+  },
+  "license": "MIT"
 }

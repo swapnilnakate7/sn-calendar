@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SnCalendarComponent } from './calendar/sn-calendar.component';
-import {SnCalendarLibComponent} from '../../projects/sn-calendar-lib/src/public_api';
+
+//import {SnCalendarComponent} from '../../projects/sn-calendar-lib/src/public_api';
+import {SnCalendarComponent} from '../../dist/sn-calendar';
 
 const routes: Routes = [{
-  path: '', component: SnCalendarLibComponent, pathMatch: 'full'
+  path: '', component: SnCalendarComponent, pathMatch: 'full'
 }];
 
 @NgModule({

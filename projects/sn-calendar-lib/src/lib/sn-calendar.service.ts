@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class SnCalendarLibService {
+export class SnCalendarService {
 
   constructor() { }
   info(message: string) {

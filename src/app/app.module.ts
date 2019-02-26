@@ -3,9 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { SnCalendarComponent} from '../app/calendar/sn-calendar.component';
-import {SnCalendarLibModule,SnCalendarLibComponent } from '../../projects/sn-calendar-lib/src/public_api';
+import {SnCalendarModule } from '../../projects/sn-calendar-lib/src/public_api';
 
 
 
@@ -16,10 +14,10 @@ import {SnCalendarLibModule,SnCalendarLibComponent } from '../../projects/sn-cal
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SnCalendarLibModule
+    SnCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports:[]
 })
-export class SnCalendarModule { }
+export class SnCalendarMainModule { }

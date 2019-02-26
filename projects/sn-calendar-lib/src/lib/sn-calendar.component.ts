@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import moment from 'moment';
-import { SnCalendarLibService } from './sn-calendar-lib.service';
+import { SnCalendarService } from './sn-calendar.service';
 import { Moment } from 'moment';
 @Component({
   selector: 'sn-calendar',
-  templateUrl:'./sn-calendar-lib.component.html',
-  styleUrls: ['./sn-calendar-lib.component.scss']
+  templateUrl:'./sn-calendar.component.html',
+  styleUrls: ['./sn-calendar.component.scss']
 })
-export class SnCalendarLibComponent implements OnInit {
+export class SnCalendarComponent implements OnInit {
 
   _weekdays: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   _daysInMonth: number;
@@ -26,7 +26,7 @@ export class SnCalendarLibComponent implements OnInit {
   @Input() restrictPast?: boolean;
   @Output() selectedDateOut?: EventEmitter<Moment> = new EventEmitter<Moment>();
 
-  constructor(private log: SnCalendarLibService) { }
+  constructor(private log: SnCalendarService) { }
 
   ngOnInit() {
     this._locale = this.locale ? this.locale : 'en';
