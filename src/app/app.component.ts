@@ -1,3 +1,9 @@
+/**
+ * This is SnCalendarMainModule.AppComponent
+ * Developed By Swapnil Nakate
+ * Twitter: @SwapnilNakate7 Email:nakate.swapnil7@gmail.com
+ * [***DO NOT REMOVE THIS***]
+ */
 import { Component } from '@angular/core';
 import * as moment from 'moment';
 import { Moment } from 'moment';
@@ -9,7 +15,7 @@ import { Moment } from 'moment';
 })
 export class AppComponent {
 
-  title = 'sn-calendar v0.0.2';
+  title = 'sn-calendar v0.0.4';
   date = moment('22/05/2019', 'DD/MM/YYYY');
   locale = 'fr';
   restrictPast = true;

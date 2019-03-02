@@ -1,3 +1,9 @@
+/**
+ * This is SnCalendarService
+ * Developed By Swapnil Nakate
+ * Twitter: @SwapnilNakate7 Email:nakate.swapnil7@gmail.com
+ * [***DO NOT REMOVE THIS***]
+ */
 import { Injectable } from '@angular/core';
 
 @Injectable({

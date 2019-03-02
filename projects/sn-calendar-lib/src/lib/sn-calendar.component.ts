@@ -1,10 +1,16 @@
+/**
+ * This is SnCalendarComponent
+ * Developed By Swapnil Nakate
+ * Twitter: @SwapnilNakate7 Email:nakate.swapnil7@gmail.com
+ * [***DO NOT REMOVE THIS***]
+ */
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import moment from 'moment';
 import { SnCalendarService } from './sn-calendar.service';
 import { Moment } from 'moment';
 @Component({
   selector: 'sn-calendar',
-  templateUrl:'./sn-calendar.component.html',
+  templateUrl: './sn-calendar.component.html',
   styleUrls: ['./sn-calendar.component.scss']
 })
 export class SnCalendarComponent implements OnInit {
@@ -67,9 +73,9 @@ export class SnCalendarComponent implements OnInit {
 
 
   /**
-   * This function updates the dates corrosponding to the current month 
+   * This function updates the dates corrosponding to the current month
    * according to the selected date
-   * @param selectedDate {Moment}
+   * @selectedDate {Moment}
    */
   setCurrentMonth(selectedDate: Moment) {
     const daysOfMonth = [[], [], [], [], [], [], []];
@@ -104,9 +110,9 @@ export class SnCalendarComponent implements OnInit {
   }
 
   /**
-   * This  function sets the max _bigWeekArray[] in order to iterate 
+   * This  function sets the max _bigWeekArray[] in order to iterate
    * through the available weeks
-   * @param month {Array}
+   * @month {Array}
    */
   getNumberOfWeeks(month: [[]]) {
     let maxSize = 0;
@@ -124,7 +130,7 @@ export class SnCalendarComponent implements OnInit {
 
   /**
    * This updates the current date according to the date selection
-   * @param date {number}
+   * @date {number}
    */
   setCurrentDate(date: number) {
     this.selectedDate.set('date', date);
@@ -138,7 +144,7 @@ export class SnCalendarComponent implements OnInit {
 
   /**
    * This updates the month according to month navigation
-   * @param updateTo {string}
+   * @updateTo {string}
    */
   updateMonth(updateTo: string) {
     const updateToOperation = { 'next': 1, 'previous': -1 };
@@ -156,8 +162,8 @@ export class SnCalendarComponent implements OnInit {
 
   /**
    * This will disable all the past dates
-   * @param date {number} current date
-   * @param selectedDate {Moment} current date
+   * @date {number} current date
+   * @selectedDate {Moment} current date
    */
   disableDatesBefore(date: number, selectedDate: Moment) {
     const selectedMonth = selectedDate.month();
@@ -184,7 +190,7 @@ export class SnCalendarComponent implements OnInit {
 
   /**
    * This will set the locale for given dates
-   * @param dates {Moment}
+   * @dates {Moment}
    */
   setLocale(...dates: Moment[]) {
     const locale = this._locale;
@@ -196,7 +202,7 @@ export class SnCalendarComponent implements OnInit {
 
   /**
    * returns Month as a string
-   * @param index {number}
+   * @index {number}
    */
   getMonth(index: number) {
     if (index < 0) {
@@ -210,7 +216,7 @@ export class SnCalendarComponent implements OnInit {
 
   /**
    * returns converted  number according to locale
-   * @param number {number}
+   * @number {number}
    */
   getLocaleNumber(number: number) {
     return number.toLocaleString(this._locale);
