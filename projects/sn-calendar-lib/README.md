@@ -2,6 +2,9 @@
 
 This project uses [Moment.js] for calendar functionality. You can import the `SnCalendarModule` and use `SnCalendarComponent` straight away. Please feel free to report any bugs and I'll be happy to introduce any feature requests. For Demo: [Stable] | [Latest] 
 
+##Update 21st July, 2019 - Updated with Angular 8 
+ All the packages are updated to the latest version. Now sn-calendar is built with Angular 8..!
+
 ## Using into your Angular Application
 
 - run `npm i sn-calendar` into your project root directory.
