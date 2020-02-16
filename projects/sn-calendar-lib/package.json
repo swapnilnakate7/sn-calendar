@@ -1,6 +1,6 @@
 {
   "name": "sn-calendar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SnCalendar is an Angular Calendar Module uses momentjs",
   "peerDependencies": {
     "@angular/common": "^7.0.0",
@@ -26,6 +26,5 @@
     "url": "https://github.com/swapnilnakate7/sn-calendar",
     "type": "git"
   },
-  "license": "MIT",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "license": "MIT"
 }
