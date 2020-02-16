@@ -26,6 +26,5 @@
     "url": "https://github.com/swapnilnakate7/sn-calendar",
     "type": "git"
   },
-  "license": "MIT",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "license": "MIT"
 }
