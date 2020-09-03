@@ -1,7 +1,7 @@
 {
   "name": "sn-calendar-module",
-  "version": "0.0.4",
-  "description": "SnCalendar is an Angular Calendar Module uses momentjs",
+  "version": "0.0.5",
+  "description": "SnCalendar is an Angular Calendar Module uses momentjs| Angular V10",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -40,7 +40,7 @@
     "@angular/router": "~10.1.0",
     "core-js": "^2.5.4",
     "moment": "^2.24.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "4.14.1",
     "rxjs": "~6.6.2",
     "zone.js": "~0.10.3"
   },
@@ -52,8 +52,8 @@
     "@angular/language-service": "~10.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~8.9.4",
-    "codelyzer": "^5.0.1",
+    "@types/node": "14.6.3",
+    "codelyzer": "6.0.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^4.2.0",
@@ -64,7 +64,6 @@
     "ng-packagr": "^10.1.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tsickle": "^0.39.1",
     "tslib": "^2.0.1",
     "tslint": "~5.11.0",
     "typescript": "~4.0.2"
