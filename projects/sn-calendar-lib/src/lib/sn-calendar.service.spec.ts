@@ -12,7 +12,7 @@ describe('SnCalendarLibService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SnCalendarService = TestBed.get(SnCalendarService);
+    const service: SnCalendarService = TestBed.inject(SnCalendarService);
     expect(service).toBeTruthy();
   });
 });

@@ -7,6 +7,8 @@ This project uses [Moment.js] for calendar functionality. You can import the `Sn
 
 ##Update 4th September, 2020 - Updated with Angular 10
 
+##Update 1st October, 2021 - Updated with Angular 12
+
 ## Using into your Angular Application
 
 - run `npm i sn-calendar` into your project root directory.

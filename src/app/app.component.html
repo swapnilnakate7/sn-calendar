@@ -6,5 +6,10 @@
 
 <router-outlet></router-outlet>
 
-<sn-calendar [selectedDate]="date" [locale]="locale" [startDayofWeek]="'sunday'" (selectedDateOut)="getUpdatedDate($event)"
+<sn-calendar [selectedDate]="date"
+[locale]="locale"
+[startDayofWeek]="'sunday'"
+(selectedDateOut)="getUpdatedDate($event)"
 [restrictPast]="restrictPast" ></sn-calendar>
+
+

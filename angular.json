@@ -155,7 +155,8 @@
             "production": {
               "tsConfig": "projects/sn-calendar-lib/tsconfig.lib.prod.json"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",

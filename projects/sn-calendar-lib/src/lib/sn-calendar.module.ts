@@ -7,11 +7,12 @@
 import { NgModule } from '@angular/core';
 import { SnCalendarComponent } from './sn-calendar.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { SnYearComponent } from './sn-year/sn-year.component';
 
 @NgModule({
-  declarations: [SnCalendarComponent],
+  declarations: [SnCalendarComponent, SnYearComponent],
   imports: [BrowserModule
   ],
-  exports: [SnCalendarComponent]
+  exports: [SnCalendarComponent,SnYearComponent]
 })
 export class SnCalendarModule { }

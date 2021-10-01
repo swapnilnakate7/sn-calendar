@@ -4,7 +4,7 @@
  * Twitter: @SwapnilNakate7 Email:nakate.swapnil7@gmail.com
  * [***DO NOT REMOVE THIS***]
  */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {  ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SnCalendarComponent } from './sn-calendar.component';
 
@@ -12,12 +12,12 @@ describe('SnCalendarComponent', () => {
   let component: SnCalendarComponent;
   let fixture: ComponentFixture<SnCalendarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ SnCalendarComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SnCalendarComponent);

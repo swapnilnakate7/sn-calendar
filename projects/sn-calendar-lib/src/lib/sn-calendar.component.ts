@@ -26,6 +26,9 @@ export class SnCalendarComponent implements OnInit {
   _months: string[];
   _restrictPast: boolean;
 
+  @Input() type?:string;
+  @Input() currentMonth?: Moment;
+
   @Input() startDayofWeek?: string;
   @Input() locale?: string;
   @Input() selectedDate?: Moment;
@@ -39,7 +42,16 @@ export class SnCalendarComponent implements OnInit {
     this.log.info('Current Locale: ' + this._locale);
     this._today = moment();
 
-    if (!this.selectedDate) {
+    if(!this.type){
+      this.type='month';
+    }
+
+    if(this.type == 'year'){
+      this.setCurrentMonth(this.currentMonth);
+      this.selectedDate = this.currentMonth;
+    }
+
+    if (!this.selectedDate && this.type == 'month') {
       this.selectedDate = moment();
       this.log.warn('CalendarComponent.ngOnInit(): You did not provide the custom date');
     }
@@ -67,6 +79,7 @@ export class SnCalendarComponent implements OnInit {
 
     this._daysInMonth = this.selectedDate.daysInMonth();
     this._dayOfMonth = this.selectedDate.date();
+
     this.setCurrentMonth(this.selectedDate);
 
   }
