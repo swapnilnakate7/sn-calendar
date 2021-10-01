@@ -146,7 +146,7 @@
       "prefix": "sn",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/sn-calendar-lib/tsconfig.lib.json",
             "project": "projects/sn-calendar-lib/ng-package.json"
