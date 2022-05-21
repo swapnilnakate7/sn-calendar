@@ -1,6 +1,6 @@
 {
   "name": "sn-calendar-module",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "SnCalendar is an Angular Calendar Module uses momentjs| Angular V12",
   "scripts": {
     "ng": "ng",
