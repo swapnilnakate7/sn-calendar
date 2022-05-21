@@ -1,7 +1,7 @@
 {
   "name": "sn-calendar",
   "version": "0.1.3",
-  "description": "SnCalendar is an Angular Calendar Module uses momentjs and Angular v12",
+  "description": "SnCalendar is an Angular Calendar Module uses momentjs and Angular v13",
   "peerDependencies": {
     "@angular/common": "~12.2.8",
     "@angular/core": "~12.2.8",
@@ -16,7 +16,8 @@
     "sn-calendar",
     "angular-calendar",
     "momentjs-calendar",
-    "calendar"
+    "calendar",
+    "ng-calendar"
   ],
   "bugs": {
     "url": "https://github.com/swapnilnakate7/sn-calendar/issues",
