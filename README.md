@@ -1,4 +1,5 @@
 # SnCalendar
+[![Lint,Test,Build](https://github.com/swapnilnakate7/sn-calendar/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/swapnilnakate7/sn-calendar/actions/workflows/node.js.yml)
 
 This project uses [Moment.js] for calendar functionality. You can import the `SnCalendarModule` and use `SnCalendarComponent` straight away. Please feel free to report any bugs and I'll be happy to introduce any feature requests. For Demo: [Stable] | [Latest] 
 

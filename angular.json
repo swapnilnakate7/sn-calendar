@@ -95,6 +95,15 @@
               "src/assets"
             ]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -143,12 +152,22 @@
             "tsConfig": "projects/sn-calendar-lib/tsconfig.spec.json",
             "karmaConfig": "projects/sn-calendar-lib/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "defaultProject": "sn-calendar",
   "cli": {
-    "analytics": "8bc8c60f-75de-4d92-b848-db03b5635c52"
+    "analytics": "8bc8c60f-75de-4d92-b848-db03b5635c52",
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }
