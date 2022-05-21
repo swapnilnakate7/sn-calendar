@@ -19,7 +19,8 @@
     "sn-calendar",
     "angular-calendar",
     "momentjs-calendar",
-    "calendar"
+    "calendar",
+    "ng-calendar"
   ],
   "bugs": {
     "url": "https://github.com/swapnilnakate7/sn-calendar/issues",
