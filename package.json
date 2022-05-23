@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:lib":"ng build sn-calendar",
-    "build:project":"ng build sn-calendar-module",
+    "build:project":"ng build sn-calendar-module --base-href '/sn-calendar/'",
     "test:ci":"ng test --watch=false --browsers=ChromeHeadless"
   },
   "author": {
