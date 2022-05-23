@@ -30,7 +30,14 @@ jobs:
       run: npm ci 
     - name: Lint
       run: npm run lint -if-present
-    - name: Test
+    - name: Test 🧪
       run: npm run test:ci -if-present
-    - name: Build
-      run: npm run build:ci --if-present
+    - name: Build Library
+      run: npm run build:lib --if-present
+    - name: Build Project 
+      run: npm run build:project
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: sn-calendar/dist/sn-calendar-module # The folder the action should deploy.

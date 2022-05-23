@@ -15,7 +15,7 @@ import { Moment } from 'moment';
 })
 export class AppComponent {
 
-  title = 'sn-calendar v0.0.6';
+  title = 'sn-calendar v0.1.4';
   date = moment();
   locale = 'fr';
   restrictPast = true;
