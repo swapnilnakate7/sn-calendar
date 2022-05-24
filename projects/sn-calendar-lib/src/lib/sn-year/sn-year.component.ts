@@ -1,5 +1,12 @@
+/**
+ * This is SnYear
+ * Developed By Swapnil Nakate
+ * Twitter: @SwapnilNakate7 Email:nakate.swapnil7@gmail.com
+ * [***DO NOT REMOVE THIS***]
+ */
 import { Component, Input } from "@angular/core";
-import moment, { Moment } from "moment";
+import  { Moment } from "moment";
+import moment from 'moment';
 @Component({
   selector: 'sn-year',
   templateUrl :'sn-year.component.html',

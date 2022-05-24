@@ -12,6 +12,41 @@ This project uses [Moment.js] for calendar functionality. You can import the `Sn
 - use `selectedDateOut` event to get the selected date.
 - supports  `restrictPast` to disable past dates, if not provided calendar will show previous  dates as well.
 
+## Usage
+ Importing `SnCalendarModule` into `app.module.ts`
+ ```javascript
+import { SnCalendarModule } from 'sn-calendar';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SnCalendarModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+ ```
+Using `sn-calendar` component with options in `HTML`
+ ```html
+ <sn-calendar [selectedDate]="date"
+[locale]="locale"
+[startDayofWeek]="'sunday'"
+(selectedDateOut)="getUpdatedDate($event)"
+[restrictPast]="restrictPast" ></sn-calendar>
+ ```
+ | Attribute | Supported Type |
+ | --- | --- |
+ | `selectedDate` | `Moment` |
+ | `locale` | `string` |
+ | `startDayofWeek` | `string` |
+ | `restrictPast` | `boolean` |
+
+
 ## Help
 get in touch with me email: nakate.swapnil7@gmail.com | twitter: @SwapnilNakate7
 
