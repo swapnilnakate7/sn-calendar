@@ -4,7 +4,7 @@
  * Twitter: @SwapnilNakate7 Email:nakate.swapnil7@gmail.com
  * [***DO NOT REMOVE THIS***]
  */
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, Renderer2 } from '@angular/core';
 import moment from 'moment';
 import { SnCalendarService } from './sn-calendar.service';
 import { Moment } from 'moment';
@@ -25,6 +25,7 @@ export class SnCalendarComponent implements OnInit {
   _locale: string;
   _months: string[];
   _restrictPast: boolean;
+  _dateRange:any[]=[];
 
   @Input() type?:string;
   @Input() currentMonth?: Moment;
@@ -33,9 +34,11 @@ export class SnCalendarComponent implements OnInit {
   @Input() locale?: string;
   @Input() selectedDate?: Moment;
   @Input() restrictPast?: boolean;
-  @Output() selectedDateOut?: EventEmitter<Moment> = new EventEmitter<Moment>();
+  @Input() enableDateRange?:boolean = false;
+  @Output() dateSelected?: EventEmitter<Moment> = new EventEmitter<Moment>();
+  @Output() dateRangeSelected?:EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private log: SnCalendarService) { }
+  constructor(private log: SnCalendarService,private renderer:Renderer2) { }
 
   ngOnInit() {
     this._locale = this.locale ? this.locale : 'en';
@@ -75,7 +78,7 @@ export class SnCalendarComponent implements OnInit {
       this._weekdays = this._today['_locale']['_weekdays'];
     }
 
-    this.selectedDateOut.emit(this.selectedDate);
+    this.dateSelected.emit(this.selectedDate);
 
     this._daysInMonth = this.selectedDate.daysInMonth();
     this._dayOfMonth = this.selectedDate.date();
@@ -91,12 +94,21 @@ export class SnCalendarComponent implements OnInit {
    * @selectedDate {Moment}
    */
   setCurrentMonth(selectedDate: Moment) {
+    /**
+     * daysOfMonth = | 1,8,15,22,29|
+     *               | 2,9,16,23,30|
+     *               | 3,10,17,24,31|
+     *               | 4,11,18,25   |
+     *               | 5,12,19,26   |
+     *               | 6,13,20,27   |
+     *               | 7,14,21,28   |
+     */
     const daysOfMonth = [[], [], [], [], [], [], []];
     let date = 0;
     let firstDateSet = false;
-    let _weekdatAtstartOfMonth = selectedDate.startOf('month').day();
+    let _weekdayAtstartOfMonth = selectedDate.startOf('month').day();
     if (this.startDayofWeek === 'monday') {
-      _weekdatAtstartOfMonth = (selectedDate.startOf('month').day() === 0) ? 0 :
+      _weekdayAtstartOfMonth = (selectedDate.startOf('month').day() === 0) ? 0 :
         selectedDate.startOf('month').day() - 1;
     }
 
@@ -104,15 +116,22 @@ export class SnCalendarComponent implements OnInit {
       if (date === selectedDate.daysInMonth() + 1) {
         break;
       }
-      if (i === _weekdatAtstartOfMonth && !firstDateSet) {
+      if (i === _weekdayAtstartOfMonth && !firstDateSet) {
         date = 1;
         firstDateSet = true;
       }
       daysOfMonth[i][j] = date;
+      /**
+       * When first date is set increase the date
+       */
       if (firstDateSet) {
         date++;
       }
-      if (i === 6) {
+
+      /**
+       * When first week is completed start from 0 and fill the second column in the matrix
+       */
+       if (i === 6) {
         i = -1;
         j++;
       }
@@ -148,11 +167,52 @@ export class SnCalendarComponent implements OnInit {
   setCurrentDate(date: number) {
     this.selectedDate.set('date', date);
     this._dayOfMonth = this.selectedDate.date();
+    
+    if(this.enableDateRange){
+      this.updateDateRange(date);
+    }
+   
 
     this.selectedDate = moment(this.selectedDate.toISOString());
 
-    this.selectedDateOut.emit(this.selectedDate);
+    this.dateSelected.emit(this.selectedDate);
     this.log.info('CalendarComponent.setCurrentDate(): ' + this.selectedDate.toString());
+    this.log.info('CalendarComponent.setCurrentDate(): ' + this._dateRange);
+  }
+
+  updateDateRange(date:number){
+    if(this._dateRange.length == 0 || this._dateRange.length == 2){
+      this._dateRange =[]
+    }
+    if(this._dateRange.length == 1 && this._dateRange[0] < date){
+      this._dateRange.push(date);
+    }else if(this._dateRange.length ==0 && this.selectedDate.daysInMonth() !== date){
+      this._dateRange.push(date);
+    }
+
+    if(this._dateRange.length == 2){
+     let start = moment().set('date',this._dateRange[0]);
+     let end  = moment().set('date',this._dateRange[1]);
+     const eventData = {start,end};
+     this.dateRangeSelected.emit(eventData);
+     console.log('CalendarComponent.setCurrentDate() eventData: ', eventData);
+    }
+  }
+
+
+
+  isDateInRange(date:number){
+     let flag = false;
+     if(this.enableDateRange){
+      if(this._dateRange.length == 2 && this._dateRange[0] <= date && this._dateRange[1] >= date){
+        flag = true;
+      }
+      if(this._dateRange.length == 1 && this._dateRange[0] <= date){
+        flag = true;
+      }
+     }
+     
+    return flag;
   }
 
   /**
@@ -169,7 +229,7 @@ export class SnCalendarComponent implements OnInit {
     this.setCurrentMonth(this.selectedDate);
     this._dayOfMonth = this.selectedDate.date();
 
-    this.selectedDateOut.emit(this.selectedDate);
+    this.dateSelected.emit(this.selectedDate);
     this.log.info('CalendarComponent.updateMonth(): ' + this.selectedDate.toString());
   }
 

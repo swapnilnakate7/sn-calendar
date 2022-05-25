@@ -15,9 +15,9 @@
   
     <tbody>
       <tr  *ngFor='let h of _bigWeekArray;let i=index'>
-        <td *ngFor="let _week of _monthDays;let j=index" [ngClass]="{'active': _dayOfMonth ==_week[i],
-       'disable': disableDatesBefore(_week[i],selectedDate) }"
-        (click)="disableDatesBefore(_week[i],selectedDate) || setCurrentDate(_week[i])">
+        <td  *ngFor="let _week of _monthDays;let j=index" [ngClass]="{'active': _dayOfMonth ==_week[i] && _dateRange.length == 0,
+       'disable': disableDatesBefore(_week[i],selectedDate),'dateRangeClicked': _dateRange.indexOf(_week[i]) > -1,'dateRange':isDateInRange(_week[i])}"
+        (click)="disableDatesBefore(_week[i],selectedDate) || setCurrentDate(_week[i])" >
            {{_week[i] == 0?'':_week[i]}}
        </td> 
        </tr>

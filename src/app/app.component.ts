@@ -17,10 +17,16 @@ export class AppComponent {
 
   title = 'sn-calendar v0.1.4';
   date = moment();
+  dateRangeSelected?:any;
   locale = 'fr';
   restrictPast = true;
 
   getUpdatedDate(e: Moment) {
     this.date = e;
+  }
+
+  showDateRange(e:any){
+    console.log('showDateRange',e);
+    this.dateRangeSelected = e;
   }
 }

@@ -95,6 +95,21 @@
           color: #ffffff;
 
         }
+
+        &.dateRange{
+          
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+          background-color: #8510F2;
+          color: #ffffff;
+          
+          
+        }
+
+        &.dateRangeClicked{
+          background-color: #00df8b;
+          color: #ffffff;
+        }
       }
     }
 

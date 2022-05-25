@@ -11,6 +11,7 @@ This project uses [Moment.js] for calendar functionality. You can import the `Sn
 ## Update 1st October, 2021 - Updated with Angular 12
 
 ## Update May, 2022 - Updated to Angular 13
+ Added date range support, you can now configure the component to select the date range.
 
 ## Using into your Angular Application
 
@@ -42,18 +43,24 @@ export class AppModule { }
  ```
 Using `sn-calendar` component with options in `HTML`
  ```html
- <sn-calendar [selectedDate]="date"
+<sn-calendar 
+[selectedDate]="date"
 [locale]="locale"
 [startDayofWeek]="'sunday'"
-(selectedDateOut)="getUpdatedDate($event)"
-[restrictPast]="restrictPast" ></sn-calendar>
+[enableDateRange]="true"
+[restrictPast]="restrictPast"
+(dateSelected)="getUpdatedDate($event)"
+(dateRangeSelected)="showDateRange($event)" ></sn-calendar>
  ```
  | Attribute | Supported Type |
  | --- | --- |
  | `selectedDate` | `Moment` |
  | `locale` | `string` |
  | `startDayofWeek` | `string` |
+ | `enableDateRange` | `boolean` |
  | `restrictPast` | `boolean` |
+ | `dateSelected` | `EventEmitter` with `Moment` |
+ | `dateRangeSelected` | `EventEmitter` with `{start:Moment,end:Moment}` |
 
 ## Help
 get in touch with me email: nakate.swapnil7@gmail.com | twitter: @SwapnilNakate7

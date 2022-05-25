@@ -1,6 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h1>{{title}}</h1>
 {{date |date:'ddMMMyyyy' :'fr'}}
+<div *ngIf="dateRangeSelected">
+   <span>
+    Start: {{dateRangeSelected.start|date:'ddMMyyyy'}}
+   </span>
+   <span>
+    End: {{dateRangeSelected.end|date:'dd MMM yyyy'}}
+   </span>
+</div>
 <hr>
 
 
@@ -9,7 +17,9 @@
 <sn-calendar [selectedDate]="date"
 [locale]="locale"
 [startDayofWeek]="'sunday'"
-(selectedDateOut)="getUpdatedDate($event)"
-[restrictPast]="restrictPast" ></sn-calendar>
+[enableDateRange]="true"
+[restrictPast]="restrictPast"
+(dateSelected)="getUpdatedDate($event)"
+(dateRangeSelected)="showDateRange($event)" ></sn-calendar>
 
 

@@ -33,18 +33,24 @@ export class AppModule { }
  ```
 Using `sn-calendar` component with options in `HTML`
  ```html
- <sn-calendar [selectedDate]="date"
+<sn-calendar 
+[selectedDate]="date"
 [locale]="locale"
 [startDayofWeek]="'sunday'"
-(selectedDateOut)="getUpdatedDate($event)"
-[restrictPast]="restrictPast" ></sn-calendar>
+[enableDateRange]="true"
+[restrictPast]="restrictPast"
+(dateSelected)="getUpdatedDate($event)"
+(dateRangeSelected)="showDateRange($event)" ></sn-calendar>
  ```
  | Attribute | Supported Type |
  | --- | --- |
  | `selectedDate` | `Moment` |
  | `locale` | `string` |
  | `startDayofWeek` | `string` |
+ | `enableDateRange` | `boolean` |
  | `restrictPast` | `boolean` |
+ | `dateSelected` | `EventEmitter` with `Moment` |
+ | `dateRangeSelected` | `EventEmitter` with `{start:Moment,end:Moment}` |
 
 
 ## Help
