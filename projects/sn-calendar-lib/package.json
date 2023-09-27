@@ -1,7 +1,7 @@
 {
   "name": "sn-calendar",
   "version": "0.1.4",
-  "description": "SnCalendar is an Angular Calendar Module uses momentjs and Angular v13",
+  "description": "SnCalendar is an Angular Calendar Module uses momentjs and Angular v16",
   "peerDependencies": {
     "@angular/common": "~13.3.9",
     "@angular/core": "~13.3.9",
