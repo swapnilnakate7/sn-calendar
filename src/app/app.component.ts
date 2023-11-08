@@ -14,7 +14,7 @@ import { Moment } from "moment";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = "sn-calendar v0.1.4";
+  title = "sn-calendar v0.1.5";
   date = moment();
   dateRangeSelected?: any;
   locale = "fr";

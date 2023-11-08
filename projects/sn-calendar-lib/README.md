@@ -20,6 +20,10 @@ Added date range support, you can now configure the component to select the date
 
 Updated to Angular v16
 
+## Update 8 Nov, 2023 - Updated to Angular 17
+
+Updated to Angular v17
+
 ## Using into your Angular Application
 
 - run `npm i sn-calendar` into your project root directory.

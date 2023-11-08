@@ -12,14 +12,12 @@ import { SnCalendarComponent } from 'projects/sn-calendar-lib/src/public_api';
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent,
+    imports: [
+        RouterTestingModule,
         SnCalendarComponent
-      ],
-    }).compileComponents();
+    ],
+    declarations: [AppComponent],
+}).compileComponents();
   });
 
   it('should create the app', () => {

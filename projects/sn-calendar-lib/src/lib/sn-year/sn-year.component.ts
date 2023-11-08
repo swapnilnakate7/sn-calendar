@@ -7,10 +7,13 @@
 import { Component, Input } from "@angular/core";
 import  { Moment } from "moment";
 import moment from 'moment';
+import { SnCalendarComponent } from "../sn-calendar.component";
 @Component({
-  selector: 'sn-year',
-  templateUrl :'sn-year.component.html',
-  styleUrls: ['sn-year.component.scss']
+    selector: 'sn-year',
+    templateUrl: 'sn-year.component.html',
+    styleUrls: ['sn-year.component.scss'],
+    standalone: true,
+    imports: [SnCalendarComponent]
 })
 export class SnYearComponent{
    _months:string[]=["January","February","March","April","May","June","July","August","September","October","November","December"];

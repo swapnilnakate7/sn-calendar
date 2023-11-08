@@ -14,8 +14,8 @@ describe('SnCalendarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ SnCalendarComponent ]
-    })
+    imports: [SnCalendarComponent]
+})
     .compileComponents();
   });
 

@@ -1,1 +1,4 @@
-<sn-calendar *ngFor="let month of _months;let i=index"  [type]="'year'" [currentMonth]="getMonth(i)"></sn-calendar>
+@for(month of _months;track i;let i=$index){
+<sn-calendar [type]="'year'" [currentMonth]="getMonth(i)"></sn-calendar>
+}
+<!-- <sn-calendar *ngFor="let month of _months;let i=index"  [type]="'year'" [currentMonth]="getMonth(i)"></sn-calendar> -->

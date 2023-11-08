@@ -8,10 +8,13 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef, Renderer2 }
 import moment from 'moment';
 import { SnCalendarService } from './sn-calendar.service';
 import { Moment } from 'moment';
+import { NgClass } from '@angular/common';
 @Component({
-  selector: 'sn-calendar',
-  templateUrl: './sn-calendar.component.html',
-  styleUrls: ['./sn-calendar.component.scss']
+    selector: 'sn-calendar',
+    templateUrl: './sn-calendar.component.html',
+    styleUrls: ['./sn-calendar.component.scss'],
+    standalone: true,
+    imports: [NgClass]
 })
 export class SnCalendarComponent implements OnInit {
 

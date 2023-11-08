@@ -10,9 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SnYearComponent } from './sn-year/sn-year.component';
 
 @NgModule({
-  declarations: [SnCalendarComponent, SnYearComponent],
-  imports: [BrowserModule
-  ],
-  exports: [SnCalendarComponent,SnYearComponent]
+    imports: [BrowserModule, SnCalendarComponent, SnYearComponent],
+    exports: [SnCalendarComponent, SnYearComponent]
 })
 export class SnCalendarModule { }
