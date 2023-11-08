@@ -8,4 +8,4 @@
 export * from './lib/sn-calendar.service';
 export * from './lib/sn-calendar.component';
 export * from './lib/sn-year/sn-year.component';
-export * from './lib/sn-calendar.module';
+

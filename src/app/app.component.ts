@@ -7,11 +7,16 @@
 import { Component } from "@angular/core";
 import moment from "moment";
 import { Moment } from "moment";
+import { RouterOutlet } from "@angular/router";
+import { NgIf, DatePipe } from "@angular/common";
+import { SnCalendarComponent } from "dist/sn-calendar";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
+  standalone: true,
+  imports: [NgIf, RouterOutlet, DatePipe, SnCalendarComponent],
 })
 export class AppComponent {
   title = "sn-calendar v0.1.5";

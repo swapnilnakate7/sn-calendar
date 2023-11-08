@@ -14,9 +14,9 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
     imports: [
         RouterTestingModule,
-        SnCalendarComponent
+        SnCalendarComponent,
+        AppComponent
     ],
-    declarations: [AppComponent],
 }).compileComponents();
   });
 
