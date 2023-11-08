@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sn-calendar-module:build"
+            "buildTarget": "sn-calendar-module:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sn-calendar-module:build:production"
+              "buildTarget": "sn-calendar-module:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sn-calendar-module:build"
+            "buildTarget": "sn-calendar-module:build"
           }
         },
         "test": {
